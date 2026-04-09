@@ -1,5 +1,81 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+/ {
+    macros {
+        mc_copy: mc_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_paste: mc_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_cut: mc_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_undo: mc_undo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_redo: mc_redo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Y>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_save: mc_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_find: mc_find {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        mc_select_all: mc_select_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp A>
+                , <&macro_release &kp LCTRL>;
+        };
+    };
+};
+
 
 / {
     keymap {
@@ -17,11 +93,11 @@
 
         lower_layer {
             bindings = <
-&trans    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                      &kp F6    &kp F7      &kp F8      &kp F9      &kp F10     &trans
-&trans    &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &trans
-&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT                   &kp MINUS &kp EQUAL   &kp LBKT    &kp RBKT    &kp GRAVE   &trans
-&trans    &kp PG_UP &kp INS   &kp DEL   &kp PG_DN &trans                      &trans    &kp UNDER   &kp PLUS    &kp LBRC    &kp RBRC    &trans
-&trans    &trans    &trans    &trans    &trans    &trans      &trans   &trans &trans    &trans      &trans      &trans
+&trans         &mc_undo      &mc_cut       &mc_copy      &mc_paste     &mc_save                      &kp N7       &kp N8       &kp N9       &kp MINUS    &kp EQUAL    &trans
+&trans         &mc_find      &kp HOME      &kp UP        &kp END       &mc_select_all                &kp N4       &kp N5       &kp N6       &kp LBKT     &kp RBKT     &trans
+&trans         &kp LCTRL     &kp LEFT      &kp DOWN      &kp RIGHT     &mc_redo                      &kp N1       &kp N2       &kp N3       &kp SEMI     &kp SQT      &trans
+&trans         &kp PG_UP     &kp INS       &kp DEL       &kp PG_DN     &trans                        &kp N0       &kp COMMA    &kp DOT      &kp FSLH     &kp BSLH     &trans
+&trans         &trans        &trans        &trans        &trans        &trans       &trans    &trans         &trans       &trans       &trans       &trans
             >;
         };
 
