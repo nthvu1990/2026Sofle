@@ -11,28 +11,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
-    };
-
-    right_encoder: encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
-    };
-
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <30>;
-    };
-};
-
-/ {
     macros {
         tm: tm {
             compatible = "zmk,behavior-macro";
@@ -328,18 +306,6 @@
 
 / {
     behaviors {
-        rgb_encoder: rgb_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
-        };
-
-        tab_browser: tab_browser {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&tab_left>, <&tab_right>;
-        };
-
         pscode: pscode {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -417,8 +383,6 @@
 &lscw       &kp Z       &kp X       &kp C        &kp V        &kp B                          &kp CMUTE     &close_tab    &kp N         &kp M         &kp COMMA      &kp DOT        &kp FSLH &rscw
 &kp LGUI    &kp LALT    &kp LCTRL   &td_ll_l3    &kp RET      &kp SPACE   &kp ENTER   &td_rl_l3     &kp RCTRL     &kp RALT      &kp RGUI
             >;
-
-            sensor-bindings = <&inc_dec_cp C_VOL_UP C_VOL_DN &tab_browser>;
         };
 
         lower_layer {
@@ -429,8 +393,6 @@
 &kp PG_UP    &kp PG_DN    &sel_home    &sel_end       &tab_left     &close_tab                    &kp N0         &kp N0          &kp N0       &kp COMMA    &kp INS       &kp DEL
 &trans       &trans       &trans       &trans         &trans        &trans      &trans      &trans          &trans        &trans       &trans
             >;
-
-            sensor-bindings = <&inc_dec_cp C_NEXT C_PREV &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
@@ -441,8 +403,6 @@
 &kp LSHFT    &kp PG_UP    &kp DOWN     &kp PG_DN      &kp F1        &kp F2                        &kp F3         &kp F4          &kp F6       &kp F7       &kp F8        &kp F9
 &trans       &trans       &trans       &mo 3          &pscode       &trans      &trans      &trans          &mo 3         &trans       &trans
             >;
-
-            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
         };
 
         system_layer {
@@ -453,8 +413,6 @@
 &trans       &trans       &trans       &trans       &trans       &trans                    &trans          &trans          &trans          &trans          &trans          &trans
 &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans            &trans          &trans          &trans
             >;
-
-            sensor-bindings = <&rgb_encoder &rgb_encoder>;
         };
     };
 };
