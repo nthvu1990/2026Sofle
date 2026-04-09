@@ -194,7 +194,7 @@
                 , <&macro_release &kp LCTRL &kp LSHFT>;
         };
 
-        c_home: c_home {
+        sel_home: sel_home {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -205,7 +205,7 @@
                 , <&macro_release &kp LCTRL &kp LSHFT>;
         };
 
-        c_end: c_end {
+        sel_end: sel_end {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -406,7 +406,7 @@
         ret_menu: ret_menu {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RET>, <&kp K_APPLICATION>;
+            bindings = <&kp RET>, <&kp K_APP>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -445,13 +445,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | ESC |  1  |  2  |  3  |  4  |  5  |                   |  6  |  7  |  8  |  9  |  0  | DEL |
-// | TAB |  Q  |  W  |  E  |  R  |  T  |                   |  Y  |  U  |  I  |  O  |  P  | BSPC|
-// |CAPS |  A  |  S  |  D  |  F  |  G  |                   |  H  |  J  |  K  |  L  |  ;  |  '  |
-// |LSFT |  Z  |  X  |  C  |  V  |  B  |                   |MUTE | TABX |  N  |  M  |  ,  |  .  | / |RSFT|
-// | GUI | ALT | CTRL| L1/L3 |MENU | SPC |       | ENTER | L2/L3 | RCTRL | RALT | RGUI |
-// ------------------------------------------------------------------------------------------------------------
             bindings = <
 &kp ESC     &kp N1      &kp N2      &kp N3       &kp N4       &kp N5                         &kp N6        &kp N7        &kp N8        &kp N9        &kp N0         &kp DEL
 &kp TAB     &kp Q       &kp W       &kp E        &kp R        &kp T                          &kp Y         &kp U         &kp I         &kp O         &kp P          &kp BSPC
@@ -464,32 +457,18 @@
         };
 
         lower_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | UNDO | CUT | COPY |PASTE|TABL |TABR |                   |  =  |  /  |  7  |  8  |  9  | BSPC|
-// | HOME |LEFT |DOWN |  UP |RGHT | END |                   |  +  |  *  |  4  |  5  |  6  |  -  |
-// |C-LEFT|S-LEFT|S-RGHT|C-RGHT|CS-L|CS-R|                  |ENTR |  +  |  1  |  2  |  3  |  .  |
-// | PGUP |PGDN |C-HOME|C-END|TABL |CLOS |                  |  0  |  0  |  0  |COMMA| INS | DEL |
-// |      |     |     |       |     |     |       |        |      |      |      |      |
-// ------------------------------------------------------------------------------------------------------------
             bindings = <
-&kp C_Z      &kp C_X      &kp C_C      &kp C_V        &tab_left     &tab_right                    &kp KP_EQUAL   &kp KP_DIVIDE &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp BSPC
+&kp C_Z      &kp C_X      &kp C_C      &kp C_V        &tab_left     &tab_right                    &kp EQUAL      &kp KP_DIVIDE &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp BSPC
 &kp HOME     &kp LEFT     &kp DOWN     &kp UP         &kp RIGHT     &kp END                       &kp KP_PLUS    &kp KP_MULTIPLY &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_MINUS
 &ctrl_left   &shift_left  &shift_right &ctrl_right    &cs_left      &cs_right                     &kp KP_ENTER   &kp KP_PLUS   &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_DOT
-&kp PG_UP    &kp PG_DN    &c_home      &c_end         &tab_left     &close_tab                    &kp KP_N0      &kp KP_N0     &kp KP_N0    &kp COMMA    &kp INS       &kp DEL
+&kp PG_UP    &kp PG_DN    &sel_home    &sel_end       &tab_left     &close_tab                    &kp KP_N0      &kp KP_N0     &kp KP_N0    &kp COMMA    &kp INS       &kp DEL
 &trans       &trans       &trans       &trans         &trans        &trans      &trans      &trans          &trans        &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | FIND | REPL | OPEN | SAVE |  F5 | C-F5|                   | F9  | F11 | F10 |S-F11| F12 |S-F12|
-// | ESC  | UNDO | CUT  | COPY | COMM|UCOMM|                   |S-F5 | F11 | F10 |S-F11| QUICK|RENAM|
-// | TAB  | HOME |  UP  | END  |LEFT |RGHT |                   |FMTD |  TM | CAD | TERM | F8  | DEL |
-// |LSFT  |PGUP  |DOWN  |PGDN  | F1  | F2  |                   | F3  | F4  | F6  | F7  | F8  | F9  |
-// |      |      |      |  SYS | PSCD|     |       |        |      | SYS |      |      |
-// ------------------------------------------------------------------------------------------------------------
             bindings = <
 &kp C_F      &kp C_H      &kp C_O      &kp C_S        &kp F5        &vs_run_no_debug              &kp F9         &kp F11       &kp F10       &vs_step_out  &kp F12        &vs_refs
 &kp ESC      &kp C_Z      &kp C_X      &kp C_C        &vs_comment   &vs_uncomment                 &vs_stop       &kp F11       &kp F10       &vs_step_out  &vs_quick      &kp F2
@@ -502,13 +481,6 @@
         };
 
         system_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | CLR | BT1 | BT2 | BT3 | BT4 | BT5 |                   | HUE+ | HUE- | SAT+ | SAT- | BRI+ | BRI- |
-// | ESC | USB | BLE | OUT |  TM | CAD |                   | TOG  | EFF  | SPD+ | SPD- | SLP  | RST  |
-// |     |     |     |     |     |     |                   |     |     |     |     | OFF  |     |
-// |     |     |     |     |     |     |                   |     |     |     |     |     |     |
-// |     |     |     |     |     |     |       |        |      |     |      |      |
-// ------------------------------------------------------------------------------------------------------------
             bindings = <
 &td_btr      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4              &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_SAD &rgb_ug RGB_BRI &rgb_ug RGB_BRD
 &kp ESC      &out OUT_USB &out OUT_BLE &out OUT_TOG &tm          &cad                      &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_SPD &slp            &rst
