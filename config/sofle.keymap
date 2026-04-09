@@ -15,8 +15,6 @@
         tm: tm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp ESC>
@@ -26,8 +24,6 @@
         cad: cad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LALT>
                 , <&macro_tap &kp DEL>
@@ -37,8 +33,6 @@
         slp: slp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp X>
@@ -50,8 +44,6 @@
         rst: rst {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp X>
@@ -63,8 +55,6 @@
         off: off {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp X>
@@ -76,8 +66,6 @@
         tab_right: tab_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp TAB>
@@ -87,8 +75,6 @@
         tab_left: tab_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp TAB>
@@ -98,8 +84,6 @@
         close_tab: close_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp W>
@@ -109,8 +93,6 @@
         ctrl_left: ctrl_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp LEFT>
@@ -120,8 +102,6 @@
         ctrl_right: ctrl_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp RIGHT>
@@ -131,8 +111,6 @@
         shift_left: shift_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp LEFT>
@@ -142,8 +120,6 @@
         shift_right: shift_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp RIGHT>
@@ -153,8 +129,6 @@
         cs_left: cs_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp LEFT>
@@ -164,8 +138,6 @@
         cs_right: cs_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp RIGHT>
@@ -175,8 +147,6 @@
         sel_home: sel_home {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp HOME>
@@ -186,8 +156,6 @@
         sel_end: sel_end {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp END>
@@ -197,8 +165,6 @@
         vs_run_no_debug: vs_run_no_debug {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp F5>
@@ -208,8 +174,6 @@
         vs_stop: vs_stop {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp F5>
@@ -219,8 +183,6 @@
         vs_step_out: vs_step_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp F11>
@@ -230,8 +192,6 @@
         vs_refs: vs_refs {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp F12>
@@ -241,8 +201,6 @@
         vs_quick: vs_quick {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp DOT>
@@ -252,8 +210,6 @@
         vs_term: vs_term {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp GRAVE>
@@ -263,8 +219,6 @@
         vs_comment: vs_comment {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp K>
@@ -277,8 +231,6 @@
         vs_uncomment: vs_uncomment {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp K>
@@ -291,8 +243,6 @@
         vs_format: vs_format {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp K>
@@ -380,20 +330,20 @@
 
         lower_layer {
             bindings = <
-&kp C_Z      &kp C_X      &kp C_C      &kp C_V        &tab_left     &tab_right                    &kp EQUAL      &kp FSLH      &kp N7       &kp N8       &kp N9        &kp BSPC
-&kp HOME     &kp LEFT     &kp DOWN     &kp UP         &kp RIGHT     &kp END                       &kp PLUS       &kp STAR      &kp N4       &kp N5       &kp N6        &kp MINUS
-&ctrl_left   &shift_left  &shift_right &ctrl_right    &cs_left      &cs_right                     &kp ENTER      &kp PLUS      &kp N1       &kp N2       &kp N3        &kp DOT
-&kp PG_UP    &kp PG_DN    &sel_home    &sel_end       &tab_left     &close_tab                    &kp N0         &kp N0        &kp N0       &kp COMMA    &kp INS       &kp DEL
+&kp C_Z      &kp C_X      &kp C_C      &kp C_V        &tab_left     &tab_right                    &kp N7         &kp N8        &kp N9        &kp HOME      &kp UP         &kp BSPC
+&kp HOME     &kp LEFT     &kp DOWN     &kp UP         &kp RIGHT     &kp END                       &kp N4         &kp N5        &kp N6        &kp LEFT      &kp DOWN       &kp RIGHT
+&ctrl_left   &shift_left  &shift_right &ctrl_right    &cs_left      &cs_right                     &kp N1         &kp N2        &kp N3        &kp PG_UP     &kp ENTER      &kp PG_DN
+&kp PG_UP    &kp PG_DN    &sel_home    &sel_end       &tab_left     &close_tab                    &kp N0         &kp N0        &kp N0        &kp INS       &kp DEL        &kp TAB
 &trans       &trans       &trans       &trans         &trans        &trans      &trans      &trans          &trans        &trans       &trans
             >;
         };
 
         raise_layer {
             bindings = <
-&kp C_F      &kp C_H      &kp C_O      &kp C_S        &kp F5        &vs_run_no_debug              &kp F9         &kp F11       &kp F10      &vs_step_out &kp F12       &vs_refs
-&kp ESC      &kp C_Z      &kp C_X      &kp C_C        &vs_comment   &vs_uncomment                 &vs_stop       &kp F11       &kp F10      &vs_step_out &vs_quick     &kp F2
-&kp TAB      &kp HOME     &kp UP       &kp END        &kp LEFT      &kp RIGHT                     &vs_format     &tm           &cad         &vs_term     &kp F8        &kp DEL
-&kp LSHFT    &kp PG_UP    &kp DOWN     &kp PG_DN      &kp F1        &kp F2                        &kp F3         &kp F4        &kp F6       &kp F7       &kp F8        &kp F9
+&kp C_F      &kp C_H      &kp C_O      &kp C_S        &kp F5        &vs_run_no_debug              &kp F9         &kp F10       &kp F11       &kp F12       &vs_step_out   &vs_refs
+&kp ESC      &kp C_Z      &kp C_X      &kp C_C        &vs_comment   &vs_uncomment                 &vs_stop       &kp F1        &kp F2        &kp F3        &kp F4         &kp F5
+&kp TAB      &kp HOME     &kp UP       &kp END        &kp LEFT      &kp RIGHT                     &vs_format     &tm           &cad          &vs_term      &kp F8         &kp DEL
+&kp LSHFT    &kp PG_UP    &kp DOWN     &kp PG_DN      &kp F6        &kp F7                        &kp F8         &kp F9        &kp F10       &kp F11       &kp F12        &vs_quick
 &trans       &trans       &trans       &mo 3          &pscode       &trans      &trans      &trans          &mo 3         &trans       &trans
             >;
         };
