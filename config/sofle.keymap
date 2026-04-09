@@ -73,6 +73,128 @@
                 , <&macro_tap &kp A>
                 , <&macro_release &kp LCTRL>;
         };
+        vs_palette: vs_palette {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp P>
+                , <&macro_release &kp LCTRL &kp LSHFT>;
+        };
+
+        vs_comment: vs_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp K>
+                , <&macro_release &kp LCTRL>
+                , <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        vs_uncomment: vs_uncomment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp K>
+                , <&macro_release &kp LCTRL>
+                , <&macro_press &kp LCTRL>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        vs_format: vs_format {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp K>
+                , <&macro_release &kp LCTRL>
+                , <&macro_press &kp LCTRL>
+                , <&macro_tap &kp D>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        vs_run: vs_run {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp F5>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        vs_stop: vs_stop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F5>
+                , <&macro_release &kp LSHFT>;
+        };
+
+        vs_term: vs_term {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        vs_quick: vs_quick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp DOT>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        vs_refs: vs_refs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F12>
+                , <&macro_release &kp LSHFT>;
+        };
+
+        vs_rename: vs_rename {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F2>;
+        };
+
+        vs_bp: vs_bp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F9>;
+        };
+
+        vs_step_into: vs_step_into {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F11>;
+        };
+
+        vs_step_over: vs_step_over {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F10>;
+        };
+
+        vs_step_out: vs_step_out {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F11>
+                , <&macro_release &kp LSHFT>;
+        };
     };
 };
 
@@ -103,21 +225,21 @@
 
         raise_layer {
             bindings = <
-&trans    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                      &kp F6    &kp F7      &kp F8      &kp F9      &kp F10     &trans
-&trans    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                      &kp N6    &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT                   &kp LEFT  &kp DOWN    &kp UP      &kp RIGHT   &kp TAB     &trans
-&trans    &kp PG_UP &kp INS   &kp DEL   &kp PG_DN &trans                      &trans    &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH    &trans
-&trans    &trans    &trans    &mo 3     &trans    &trans      &trans   &trans &mo 3     &trans      &trans      &trans
+&trans        &vs_run       &vs_stop      &vs_bp         &vs_step_into &vs_step_over                 &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
+&trans        &vs_palette   &vs_quick     &vs_refs       &vs_rename    &vs_term                      &kp HOME     &kp UP       &kp END      &kp PG_UP    &kp INS      &trans
+&trans        &vs_comment   &kp LEFT      &kp DOWN       &kp RIGHT     &vs_uncomment                 &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp DEL      &trans
+&trans        &vs_format    &kp TAB       &kp ESC        &vs_step_out  &trans                        &kp PG_DN    &kp COMMA    &kp DOT      &kp FSLH     &kp BSLH     &trans
+&trans        &trans        &trans        &mo 3          &trans        &trans        &trans  &trans        &mo 3        &trans       &trans       &trans
             >;
         };
 
         adjust_layer {
             bindings = <
-&trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans      &trans      &trans      &trans      &trans
-&trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans      &trans      &trans      &trans      &trans
-&trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans      &trans      &trans      &trans      &trans
-&trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans      &trans      &trans      &trans      &trans
-&trans    &trans    &trans    &trans    &trans    &trans      &trans   &trans &trans    &trans      &trans      &trans
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_BRI &rgb_ug RGB_BRD
+&trans       &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &trans        &trans                    &rgb_ug RGB_SAI &rgb_ug RGB_SAD &rgb_ug RGB_SPI &rgb_ug RGB_SPD &trans          &trans
+&trans       &trans        &trans        &trans        &trans        &trans                    &trans          &trans          &trans          &trans          &trans          &trans
+&trans       &trans        &trans        &trans        &trans        &trans                    &trans          &trans          &trans          &trans          &trans          &trans
+&trans       &trans        &trans        &trans        &trans        &trans      &trans   &trans          &trans          &trans          &trans          &trans
             >;
         };
     };
