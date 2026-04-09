@@ -4,6 +4,59 @@
 #include <dt-bindings/zmk/outputs.h>
 / {
     macros {
+        word_prev: word_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        word_next: word_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LCTRL>;
+        };
+
+        sel_prev_word: sel_prev_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LCTRL &kp LSHFT>;
+        };
+
+        sel_next_word: sel_next_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LCTRL &kp LSHFT>;
+        };
+
+        sel_to_start: sel_to_start {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp HOME>
+                , <&macro_release &kp LCTRL &kp LSHFT>;
+        };
+
+        sel_to_end: sel_to_end {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp END>
+                , <&macro_release &kp LCTRL &kp LSHFT>;
+        };
         mc_copy: mc_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -217,11 +270,11 @@
 
         lower_layer {
             bindings = <
-&trans         &mc_undo      &mc_cut       &mc_copy      &mc_paste     &mc_save                      &kp N7       &kp N8       &kp N9       &kp MINUS    &kp EQUAL    &trans
-&trans         &mc_find      &kp HOME      &kp UP        &kp END       &mc_select_all                &kp N4       &kp N5       &kp N6       &kp LBKT     &kp RBKT     &trans
-&trans         &kp LCTRL     &kp LEFT      &kp DOWN      &kp RIGHT     &mc_redo                      &kp N1       &kp N2       &kp N3       &kp SEMI     &kp SQT      &trans
-&trans         &kp PG_UP     &kp INS       &kp DEL       &kp PG_DN     &trans                        &kp N0       &kp COMMA    &kp DOT      &kp FSLH     &kp BSLH     &trans
-&trans         &trans        &trans        &trans        &trans        &trans       &trans    &trans         &trans       &trans       &trans       &trans
+&trans         &mc_undo       &mc_cut        &mc_copy       &mc_paste      &mc_save                      &kp N7        &kp N8         &kp N9        &kp MINUS    &kp EQUAL    &trans
+&trans         &mc_find       &word_prev     &kp UP         &word_next      &mc_select_all                &kp N4        &kp N5         &kp N6        &kp LBKT     &kp RBKT     &trans
+&trans         &kp LCTRL      &kp LEFT       &kp DOWN       &kp RIGHT       &mc_redo                      &kp N1        &kp N2         &kp N3        &kp SEMI     &kp SQT      &trans
+&trans         &sel_to_start  &sel_prev_word &sel_next_word &sel_to_end     &trans                        &kp N0        &kp COMMA      &kp DOT       &kp FSLH     &kp BSLH     &trans
+&trans         &trans         &trans         &trans         &trans          &trans      &trans   &trans         &trans        &trans       &trans       &trans
             >;
         };
 
