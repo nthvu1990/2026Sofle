@@ -418,7 +418,7 @@
 &kp LGUI    &kp LALT    &kp LCTRL   &td_ll_l3    &kp RET      &kp SPACE   &kp ENTER   &td_rl_l3     &kp RCTRL     &kp RALT      &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &tab_browser>;
+            sensor-bindings = <&inc_dec_cp C_VOL_UP C_VOL_DN &tab_browser>;
         };
 
         lower_layer {
@@ -430,7 +430,7 @@
 &trans       &trans       &trans       &trans         &trans        &trans      &trans      &trans          &trans        &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_cp C_NEXT C_PREV &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
