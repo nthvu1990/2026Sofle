@@ -381,11 +381,11 @@
 
         lower_layer {
             bindings = <
-&kp GRAVE  &mc_undo       &mc_cut         &mc_copy        &mc_paste    &mc_save                        &kp N7   &kp N8        &kp N9    &kp MINUS     &kp EQUAL  &trans
-&trans     &mc_find       &word_prev      &kp UP          &word_next   &kp EQUAL                       &kp N4   &kp N5        &kp N6    &kp PLUS      &kp RBKT   &trans
-&trans     &kp LCTRL      &kp LEFT        &kp DOWN        &kp RIGHT    &kp MINUS                       &kp N1   &kp N2        &kp N3    &kp ASTERISK  &kp SQT    &trans
-&trans     &sel_to_start  &sel_prev_word  &sel_next_word  &sel_to_end  &trans     &kp N0    &kp COMMA  &kp DOT  &kp NUMBER_0  &kp BSLH  &kp SLASH     &trans     &trans
-                          &trans          &trans          &trans       &trans     &trans    &trans     &trans   &trans        &trans    &trans
+&kp GRAVE   &mc_undo       &mc_cut         &mc_copy        &mc_paste    &mc_save                        &kp N7   &kp N8        &kp N9    &kp MINUS     &kp EQUAL  &trans
+&caps_word  &mc_find       &word_prev      &kp UP          &word_next   &kp EQUAL                       &kp N4   &kp N5        &kp N6    &kp PLUS      &kp RBKT   &trans
+&trans      &kp LCTRL      &kp LEFT        &kp DOWN        &kp RIGHT    &kp MINUS                       &kp N1   &kp N2        &kp N3    &kp ASTERISK  &kp SQT    &trans
+&trans      &sel_to_start  &sel_prev_word  &sel_next_word  &sel_to_end  &trans     &kp N0    &kp COMMA  &kp DOT  &kp NUMBER_0  &kp BSLH  &kp SLASH     &trans     &trans
+                           &trans          &trans          &trans       &trans     &trans    &trans     &trans   &trans        &trans    &trans
             >;
         };
 
