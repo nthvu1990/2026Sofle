@@ -340,11 +340,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_WIN>,
+                <&kp LEFT_GUI &kp LEFT_SHIFT>,
                 <&macro_tap>,
-                <&kp LEFT_SHIFT &kp S>,
+                <&kp S>,
                 <&macro_release>,
-                <&kp LEFT_WIN>;
+                <&kp LMETA &kp LEFT_SHIFT>;
 
             label = "CAPTURESCREEN";
         };
@@ -354,11 +354,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp RCTRL>,
+                <&kp RCTRL &kp LEFT_SHIFT>,
                 <&macro_tap>,
-                <&kp LEFT_SHIFT &kp V>,
+                <&kp V>,
                 <&macro_release>,
-                <&kp RCTRL>;
+                <&kp RCTRL &kp LEFT_SHIFT>;
 
             label = "PASTEVALUE";
         };
